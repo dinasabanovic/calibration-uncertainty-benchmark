@@ -10,36 +10,6 @@ Procedure:
        (previously correction was applied separately per hypothesis, which was
         overly lenient and incorrect)
     4. Report rank-biserial correlation as effect size
-
-Key comparisons:
-    H1: deep_ensemble/none  vs  lgbm/none
-        → Does the raw uncertainty advantage of ensembles exist?
-
-    H2: lgbm/none  vs  lgbm/temp
-        lgbm/none  vs  lgbm/isotonic
-        lgbm/temp  vs  lgbm/isotonic
-        → Does calibration improve GBDT uncertainty?
-          Which calibrator is more effective?
-
-    H3: deep_ensemble/isotonic  vs  lgbm/isotonic
-        deep_ensemble/isotonic  vs  xgboost/isotonic
-        deep_ensemble/isotonic  vs  single_mlp/isotonic
-        → After FAIR calibration (isotonic only), does the gap persist?
-
-    NOTE on H3 — why deep_ensemble/temp is excluded:
-    TemperatureScaling on ensemble outputs operates in a pseudo-logit space
-    (log of averaged member probabilities) rather than true pre-softmax logits.
-    This is an acknowledged approximation (see models.py).  Including
-    deep_ensemble/temp in H3 conflates a real calibration gap with an
-    artefact of the TS approximation.  H3 is therefore restricted to
-    isotonic regression, which makes no logit-space assumptions and is
-    equally valid for all model types.  deep_ensemble/temp results are
-    retained in the supplementary material (see postprocess.py) for
-    completeness, but are not used to draw primary conclusions.
-
-Important: all p-values from all hypotheses × metrics are collected before any
-correction is applied, then Holm–Bonferroni is applied to the entire family.
-This is more conservative (and correct) than per-hypothesis correction.
 """
 
 import logging
