@@ -6,17 +6,7 @@ Model implementations for the calibration benchmark.
 Deep ensemble definition follows the current standard:
     Lakshminarayanan et al. (2017) — original formulation
     Gorishniy et al. / TabM (ICLR 2025) — "multiple DL models of the same
-        architecture trained independently under different random seeds"
-
-Key design decisions:
-    - No bootstrap sampling: random weight initialisation is the sole
-      diversity source, matching the original paper and all major 2023-2025
-      tabular benchmarks (TabM, TabReD, McElfresh et al.).
-    - M=5 members: standard ensemble size in the calibration and tabular DL
-      literature (Ovadia et al. 2019; Fort et al. 2019).
-    - Fixed MLP architecture (256→128) across all tasks: controlled comparison,
-      no post-hoc tuning bias.  Supported by Kadra et al. (2021) showing fixed
-      MLPs are competitive on tabular data with appropriate regularisation.
+        architecture trained independently under different random seeds.
 """
 
 import logging
