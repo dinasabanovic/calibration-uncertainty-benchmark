@@ -161,23 +161,7 @@ python experiments/run_experiments.py --max_datasets 5 --seeds 0 1 \
 
 ### 3. Re-run the §4.7 hyperparameter ablation
 
-15 MLP configurations × 36 datasets × 5 seeds = 2 700 runs. Splits cleanly across two GPUs:
-
-```bash
-# GPU 0 — seeds 0, 1, 2
-CUDA_VISIBLE_DEVICES=0 python experiments/hp_sensitivity_ablation.py \
-    --results_csv results/results_raw.csv \
-    --output_dir  results/hp_ablation_seeds012 \
-    --n_hp_configs 15 \
-    --seeds 0 1 2
-
-# GPU 1 — seeds 3, 4
-CUDA_VISIBLE_DEVICES=1 python experiments/hp_sensitivity_ablation.py \
-    --results_csv results/results_raw.csv \
-    --output_dir  results/hp_ablation_seeds34 \
-    --n_hp_configs 15 \
-    --seeds 3 4
-```
+15 MLP configurations × 36 datasets × 5 seeds = 2 700 runs.
 
 ---
 
