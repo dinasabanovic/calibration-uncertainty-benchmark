@@ -15,9 +15,6 @@ Paper:
 **Šabanović, D., Krčmar, T., Krpić, Z., & Lukić, I. (2026).**
 *Does Post-Hoc Calibration Close the Predictive Uncertainty Gap? A Systematic Comparison of Gradient-Boosted Trees and Deep Ensembles.*
 Machine Learning and Knowledge Extraction.
-**<https://doi.org/10.3390/make1010000>**
-
-> ⚠️ DOI is a placeholder — update once the paper is assigned a final identifier.
 
 ---
 
@@ -208,58 +205,6 @@ Fixed hyperparameters used across all 36 datasets — see `src/models.py` and `s
 1. **Calibrator naming.** The paper uses **MLR** (multinomial logistic recalibration); the code uses `"logistic"` as the registry key, with `"platt"` retained as a deprecated alias. They denote the same calibrator.
 2. **H3 primary vs. supplementary comparator.** Paper Table 5 frames temperature scaling as the *primary* H3 comparator and isotonic regression as a *robustness check*. The code (`src/statistical_analysis.py`) was originally written with the opposite framing, justified on the grounds that TS on ensemble outputs uses a pseudo-logit approximation. **Both sets of numbers are computed and saved** (look for `stats_H3_*.csv` vs `stats_H3_supp_temp_*.csv`), so all values in Table 5 are reproducible — only the labelling of which row is "primary" differs.
 3. The version of `results_raw.csv` shipped here is the exact frozen output used to produce every table and figure in the paper.
-
----
-
-## Citation
-
-If you use this code or its findings in your research, please cite:
-
-**APA**
-
-```
-Šabanović, D., Krčmar, T., Krpić, Z., & Lukić, I. (2026). Does Post-Hoc Calibration Close the Predictive Uncertainty Gap? A Systematic Comparison of Gradient-Boosted Trees and Deep Ensembles. Machine Learning and Knowledge Extraction. https://doi.org/10.3390/make1010000
-```
-
-**BibTeX**
-
-```bibtex
-@article{sabanovic2026calibration,
-  title     = {Does Post-Hoc Calibration Close the Predictive Uncertainty Gap?
-               A Systematic Comparison of Gradient-Boosted Trees and Deep Ensembles},
-  author    = {{\v{S}}abanovi{\'c}, Dina and Kr{\v{c}}mar, Tea and
-               Krpi{\'c}, Zdravko and Luki{\'c}, Ivica},
-  journal   = {Machine Learning and Knowledge Extraction},
-  year      = {2026},
-  publisher = {MDPI},
-  doi       = {10.3390/make1010000},
-  url       = {https://doi.org/10.3390/make1010000}
-}
-```
-
-**MDPI / ACS**
-
-```
-Šabanović, D.; Krčmar, T.; Krpić, Z.; Lukić, I. Does Post-Hoc Calibration Close the Predictive Uncertainty Gap? A Systematic Comparison of Gradient-Boosted Trees and Deep Ensembles. Mach. Learn. Knowl. Extr. 2026. https://doi.org/10.3390/make1010000
-```
-
-**Chicago / Turabian**
-
-```
-Šabanović, Dina, Tea Krčmar, Zdravko Krpić, and Ivica Lukić. 2026. "Does Post-Hoc Calibration Close the Predictive Uncertainty Gap? A Systematic Comparison of Gradient-Boosted Trees and Deep Ensembles." Machine Learning and Knowledge Extraction. https://doi.org/10.3390/make1010000
-```
-
----
-
-## Funding
-
-This research was funded as part of the project *"Researching advanced algorithms and innovative business intelligence solutions in the cloud — NPOO.C3.2.R3-I1.04.0128"*.
-
-## Affiliation
-
-Faculty of Electrical Engineering, Computer Science and Information Technology Osijek
-Josip Juraj Strossmayer University of Osijek, Croatia
-📧 dina.sabanovic@ferit.hr
 
 ---
 
