@@ -14,22 +14,6 @@ Design
 - Best config selected by val_cal NLL (same metric as temperature scaling)
 - Evaluation under temperature scaling only (recommended calibrator)
 - Results directly comparable to main experiment Tables 2–7
-
-Usage
------
-GPU 0 (seeds 0, 1, 2):
-    CUDA_VISIBLE_DEVICES=0 python hp_sensitivity_ablation.py \\
-        --results_csv results/results_raw.csv \\
-        --output_dir  results/hp_ablation_seeds012 \\
-        --n_hp_configs 15 \\
-        --seeds 0 1 2
-
-GPU 1 (seeds 3, 4):
-    CUDA_VISIBLE_DEVICES=1 python hp_sensitivity_ablation.py \\
-        --results_csv results/results_raw.csv \\
-        --output_dir  results/hp_ablation_seeds34 \\
-        --n_hp_configs 15 \\
-        --seeds 3 4
 """
 
 import argparse
