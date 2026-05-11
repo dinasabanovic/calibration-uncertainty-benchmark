@@ -6,7 +6,7 @@ Full factorial benchmark runner.
 Factors:
     Model       : lgbm | xgboost | single_mlp | deep_ensemble
     Calibrator  : none | temp | logistic | isotonic
-    Seed        : 5 seeds (0–4) — minimum for stable median on tabular data
+    Seed        : 5 seeds (0–4) 
 
 Deep ensemble configuration:
     M=5 members, random initialisation only (no bootstrap).
