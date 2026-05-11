@@ -3,7 +3,6 @@
 > **A Systematic Comparison of Gradient-Boosted Trees and Deep Ensembles**
 > *Submitted to Machine Learning and Knowledge Extraction (MDPI), 2026*
 
-[![DOI](https://img.shields.io/badge/DOI-10.3390%2Fmake1010000-blue)](https://doi.org/10.3390/make1010000)
 [![Journal](https://img.shields.io/badge/Journal-MAKE%202026-green)](https://www.mdpi.com/journal/make)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue)](https://www.python.org/)
@@ -13,7 +12,7 @@
 Paper:
 
 **Šabanović, D., Krčmar, T., Krpić, Z., & Lukić, I. (2026).**
-*Does Post-Hoc Calibration Close the Predictive Uncertainty Gap? A Systematic Comparison of Gradient-Boosted Trees and Deep Ensembles.*
+*A Systematic Comparison of Gradient-Boosted Trees and Deep Ensembles.*
 Machine Learning and Knowledge Extraction.
 
 ---
