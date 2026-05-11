@@ -1,37 +1,3 @@
-"""
-visualization.py
-----------------
-Journal-quality figures for MDPI Machine Learning and Knowledge Extraction.
-
-Design rules (MDPI MAKE):
-    - Minimum font size 9pt anywhere in the figure
-    - Title / axis label: 13-14pt
-    - Tick labels: 11pt
-    - Figure width: 17.5 cm (full page) for multi-panel
-    - Figures stacked VERTICALLY when side-by-side would make text too small
-    - DPI: 300 for print, saved as both PDF and PNG
-
-Figures produced:
-    1       Metric heatmap grid (median per condition × metric)  ← paper Fig 1
-    2       Combined 4-panel: ΔNLL/ΔECE scatter + raw vs cal ECE ← paper Fig 2
-    3       NLL boxplots — distribution across datasets per condition
-    4       Per-dataset NLL ranking heatmap
-    5       Per-dataset ECE ranking heatmap
-    6       Training time comparison (medians annotated)
-    S1      Dataset overview (size scatter + class distribution)
-
-Summary-table note
-------------------
-build_summary_table() uses the CORRECT two-stage aggregation:
-    1. Per (dataset, condition): median across 5 seeds  → 36 values
-    2. Per condition: median + IQR of those 36 values
-The old single-stage pooling (180 raw values) inflates IQR and biases
-medians toward large easy datasets.  Maximum absolute difference vs
-pooled is ≈0.022 NLL (lgbm/isotonic).  All statistical tests in
-statistical_analysis.py already use the correct two-stage aggregation;
-only the display table was wrong.
-"""
-
 import logging
 from pathlib import Path
 from typing import Dict, List, Optional
