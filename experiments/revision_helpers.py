@@ -2,7 +2,7 @@
 revision_helpers.py
 -------------------
 Models and calibrators introduced in the major revision, plus the shared
-train-once / calibrate-many runner used by revision_night1/2/3.
+train-once / calibrate-many runner.
 
 Why these classes live here rather than in src/:
     The submitted repo's src/ tree (calibration.py, models.py, etc.) is
@@ -11,13 +11,7 @@ Why these classes live here rather than in src/:
     reproduce the v1 numbers exactly. The revision adds new model
     classes (CatBoost, MC-Dropout, TabPFN), a new calibrator (Dirichlet
     ODIR), a new ensemble variant (member-level TS), and a new ensemble
-    cardinality sweep (M in {3, 5, 10}). All of those live here so the
-    night-script .py files stay short and import-clean.
-
-Used by:
-    experiments/revision_night1.py
-    experiments/revision_night2.py
-    experiments/revision_night3.py
+    cardinality sweep (M in {3, 5, 10}). 
 """
 
 from __future__ import annotations
@@ -49,7 +43,7 @@ logger = logging.getLogger(__name__)
 
 
 # =============================================================================
-# CatBoost classifier  (Night 1)
+# CatBoost classifier  
 # =============================================================================
 
 class CatBoostModel:
@@ -107,7 +101,7 @@ class CatBoostModel:
 
 
 # =============================================================================
-# Dirichlet ODIR calibrator  (Night 1)
+# Dirichlet ODIR calibrator  
 # =============================================================================
 
 class DirichletODIRCalibrator(BaseCalibrator):
@@ -150,7 +144,7 @@ CALIBRATOR_LABELS_EXTENDED = {**CALIBRATOR_LABELS, "dirichlet": "Dirichlet ODIR"
 
 
 # =============================================================================
-# MC-Dropout MLP  (Night 2)
+# MC-Dropout MLP  
 # =============================================================================
 
 class MCDropoutMLP(SingleMLP):
@@ -182,7 +176,7 @@ class MCDropoutMLP(SingleMLP):
 
 
 # =============================================================================
-# Member-level temperature scaling  (Night 2)
+# Member-level temperature scaling  
 # =============================================================================
 
 def fit_temperature_scalar(probs: np.ndarray, y: np.ndarray,
@@ -246,7 +240,7 @@ def apply_member_level_ts(
 
 
 # =============================================================================
-# TabPFN v2 wrapper  (Night 3)
+# TabPFN v2 wrapper  
 # =============================================================================
 
 def tabpfn_compatible(task_meta: Dict, train_frac: float = 0.54) -> bool:
@@ -300,7 +294,7 @@ class TabPFNModel:
 
 
 # =============================================================================
-# Model factory and runner  (used by all three nights)
+# Model factory and runner  
 # =============================================================================
 
 # Ensemble cardinalities swept in the revision.
