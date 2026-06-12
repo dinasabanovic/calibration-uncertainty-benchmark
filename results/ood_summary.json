@@ -1,0 +1,46 @@
+{
+  "completed_at": "2026-06-11T06:24:01.121967",
+  "files_produced": [
+    {
+      "file": "tabpfn_results.csv",
+      "size_bytes": 216118
+    },
+    {
+      "file": "ood_results.csv",
+      "size_bytes": 1448945
+    },
+    {
+      "file": "label_noise_results.csv",
+      "size_bytes": 158931
+    },
+    {
+      "file": "conformal_results.csv",
+      "size_bytes": 52156
+    },
+    {
+      "file": "computational_cost.csv",
+      "size_bytes": 473
+    },
+    {
+      "file": "imbalance_buckets.csv",
+      "size_bytes": 1211
+    },
+    {
+      "file": "imbalance_stratified_nll.csv",
+      "size_bytes": 1548
+    },
+    {
+      "file": "H7_with_practical_significance.csv",
+      "size_bytes": 4405
+    },
+    {
+      "file": "composite_score_dominance.csv",
+      "size_bytes": 15941
+    }
+  ],
+  "archived_pre_fix": {
+    "file": "ood_results_pre_rng_fix.csv",
+    "size_bytes": 1418534
+  },
+  "ood_noise_tensors": 1
+}
