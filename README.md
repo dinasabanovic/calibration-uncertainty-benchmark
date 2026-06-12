@@ -128,7 +128,7 @@ export TABPFN_TOKEN=<your-token>
 
 ## Reproducibility
 
-### From frozen results (no GPU needed)
+### From frozen results
 
 The included CSV files under `results/` are the exact tables reported in the paper. To regenerate every figure from them:
 
@@ -154,8 +154,6 @@ python experiments/run_ood_diagnostics.py
 python experiments/run_ood_diagnostics.py --section ood
 ```
 
-Wall-clock on a single A100/H100: ~10–12 hours total. Every script checkpoints to disk per dataset and is fully resumable.
-
 ---
 
 ## Configuration
@@ -180,35 +178,6 @@ Fixed hyperparameters used across all 36 datasets (see `src/models.py` and `expe
 | **ECE bins**            | mean across {10, 15, 20} equal-width bins                                                                                                 |
 | **Conformal α**         | 0.1 (target coverage 0.90), APS scores on `X_val_cal`                                                                                     |
 
----
-
-## Citation
-
-If you use this code or findings in your research, please cite:
-
-**APA**
-
-```
-Šabanović, D., Krčmar, T., Krpić, Z., & Lukić, I. (2026). Calibration, Architecture, and Distribution Shift in Predictive Uncertainty Estimation. Machine Learning and Knowledge Extraction (under review).
-```
-
-**BibTeX**
-
-```bibtex
-@article{sabanovic2026calibration,
-  title   = {Calibration, Architecture, and Distribution Shift in Predictive Uncertainty Estimation},
-  author  = {{\v{S}}abanovi{\'c}, Dina and Kr{\v{c}}mar, Tea and Krpi{\'c}, Zdravko and Luki{\'c}, Ivica},
-  journal = {Machine Learning and Knowledge Extraction},
-  year    = {2026},
-  note    = {Under review}
-}
-```
-
-**MDPI / ACS**
-
-```
-Šabanović, D.; Krčmar, T.; Krpić, Z.; Lukić, I. Calibration, Architecture, and Distribution Shift in Predictive Uncertainty Estimation. Mach. Learn. Knowl. Extr. 2026 (under review).
-```
 
 ---
 
@@ -216,7 +185,6 @@ If you use this code or findings in your research, please cite:
 
 Faculty of Electrical Engineering, Computer Science and Information Technology Osijek
 Josip Juraj Strossmayer University of Osijek, Croatia
-📧 [dina.sabanovic@ferit.hr](mailto:dina.sabanovic@ferit.hr)
 
 ---
 
