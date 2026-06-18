@@ -1,14 +1,3 @@
-"""
-Figure 4: NLL trajectories under increasing Gaussian covariate shift.
-Four panels show one representative model each (one GBDT, one alternative GBDT,
-one single-network neural model, one deep ensemble). Each panel plots median
-NLL across the 36 datasets versus shift intensity sigma on x-axis. Five lines
-per panel = five calibrators. The in-distribution value (sigma=0) is computed
-from results_raw.csv; sigma>0 values from ood_results-2.csv.
-
-Inputs:  results_raw.csv, ood_results-2.csv
-Outputs: figure4_shift_reversal.pdf, figure4_shift_reversal.png
-"""
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
