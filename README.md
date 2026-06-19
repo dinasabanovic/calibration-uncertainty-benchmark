@@ -126,36 +126,6 @@ export TABPFN_TOKEN=<your-token>
 
 ---
 
-## Reproducibility
-
-### From frozen results
-
-The included CSV files under `results/` are the exact tables reported in the paper. To regenerate every figure from them:
-
-```bash
-python experiments/figure1_heatmap.py
-python experiments/figure2_paired_delta.py
-python experiments/figure3_four_panel.py
-python experiments/figure4_shift_reversal.py
-```
-
-### From scratch (GPU recommended)
-
-```bash
-# 1. Full in-distribution benchmark (4,500 rows)
-python experiments/run_full_benchmark.py
-
-# 2. Add M-sweep, MC-Dropout, member-level TS (+3,240 rows → 7,740)
-python experiments/run_ensembles_mcdropout.py
-
-# 3. OOD, label noise, TabPFN, conformal, post-hoc analyses
-python experiments/run_ood_diagnostics.py
-# or a single section:
-python experiments/run_ood_diagnostics.py --section ood
-```
-
----
-
 ## Configuration
 
 Fixed hyperparameters used across all 36 datasets (see `src/models.py` and `experiments/revision_helpers.py`):
