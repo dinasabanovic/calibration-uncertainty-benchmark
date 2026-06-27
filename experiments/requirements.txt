@@ -1,0 +1,19 @@
+# Core ML libraries
+torch==2.11.0
+lightgbm==4.3.0
+xgboost==3.2.0
+catboost==1.2.10
+scikit-learn==1.6.1
+tabpfn==8.0.8
+
+# Calibration
+dirichletcal==0.5.3
+
+# Data and statistics
+numpy==2.0.2
+pandas==2.2.2
+scipy==1.16.3
+statsmodels==0.14.6
+
+# Dataset loading
+openml==0.15.1
